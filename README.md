@@ -56,7 +56,7 @@ To run the MVC app in Docker:
 3. Run the container: `docker run -p 8080:80 raceday-mvc`
 
 ## Video Walkthrough
-[Watch the Full Walkthrough Video](YOUR_YOUTUBE_LINK_HERE)
+[Watch the Full Walkthrough Video](YOUR_YOUTUBE_LINK_HERE)https://youtu.be/v6IX8lylquU
 
 ## Author
 **Innocentia Tlotleng**  
