@@ -1,0 +1,26 @@
+name: Part 3 CI - Build MVC Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET 8
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore packages
+      run: dotnet restore Part3/RaceDayMVC/RaceDayMVC.csproj
+
+    - name: Build project
+      run: dotnet build Part3/RaceDayMVC/RaceDayMVC.csproj --no-restore --configuration Release
