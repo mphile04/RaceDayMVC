@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Participant Home";
+}
+
+<div class="container mt-5">
+    <h1 class="text-primary">Welcome, Participant!</h1>
+    <p class="lead">You are logged in to the RaceDay portal.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>Browse Events</h4>
+                <p>Find your next race.</p>
+                <a asp-action="BrowseEvents" class="btn btn-outline-primary">View Events</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>My Enrolments</h4>
+                <p>See your registered races.</p>
+                <a href="#" class="btn btn-outline-info">View Enrolments</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>My Results</h4>
+                <p>Check your race history.</p>
+                <a href="#" class="btn btn-outline-success">View Results</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>Logout</h4>
+                <p>End your session safely.</p>
+                <a asp-action="Logout" asp-controller="Account" class="btn btn-outline-danger">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+

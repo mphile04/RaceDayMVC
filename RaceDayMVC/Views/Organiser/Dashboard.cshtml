@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Organiser Dashboard";
+}
+
+<div class="container mt-5">
+    <h1 class="text-success">Organiser Dashboard</h1>
+    <p class="lead">Manage your events and participants here.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>My Events</h4>
+                <p>Create, edit, or delete your events.</p>
+                <a asp-action="CreateEvent" class="btn btn-outline-primary">Manage Events</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>Enrolments</h4>
+                <p>View who has entered your events.</p>
+                <a href="#" class="btn btn-outline-info">View Enrolments</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 text-center shadow-sm">
+                <h4>Capture Results</h4>
+                <p>Publish times and positions.</p>
+                <a href="#" class="btn btn-outline-success">Enter Results</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Logout" asp-controller="Account" class="btn btn-danger">Logout</a>
+    </div>
+</div>

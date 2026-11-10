@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Create Event";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary">Create New Event</h2>
+
+    <form asp-action="CreateEvent" method="post" class="mt-4">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Event Name</label>
+                <input type="text" name="EventName" class="form-control" required />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Event Type (Run, Walk, Cycle)</label>
+                <input type="text" name="EventType" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>Date</label>
+                <input type="date" name="EventDate" class="form-control" required />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Registration Deadline</label>
+                <input type="date" name="RegistrationDeadline" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label>City</label>
+                <input type="text" name="City" class="form-control" required />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label>Province</label>
+                <input type="text" name="Province" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label>Venue</label>
+                <input type="text" name="Venue" class="form-control" required />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Distance (km)</label>
+                <input type="number" step="0.1" name="Distance" class="form-control" />
+            </div>
+            <div class="col-md-4 mb-3">
+                <label>Entry Fee (R)</label>
+                <input type="number" step="0.01" name="EntryFee" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Event Banner Image (Azure Blob Storage)</label>
+            <input type="file" name="EventImage" class="form-control" accept="image/*" />
+            <small class="text-muted">Upload a banner for your event.</small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Create Event</button>
+        <a asp-action="Dashboard" class="btn btn-secondary">Back to Dashboard</a>
+    </form>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RaceDayMVC.Models.EventViewModel>
+@{
+    ViewData["Title"] = "Browse Events";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary mb-4">Upcoming Events</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var ev in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">@ev.EventName</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@ev.EventType</h6>
+                            <p class="card-text">
+                                <strong>Date:</strong> @ev.EventDate <br />
+                                <strong>City:</strong> @ev.City
+                            </p>
+                            <a href="#" class="btn btn-primary w-100">Enrol Now</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">No events available at the moment.</div>
+    }
+</div>
+

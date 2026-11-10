@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+@model RaceDayMVC.Models.RegisterViewModel
+
+<h2>Register</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form asp-action="Register" method="post">
+    <div class="mb-3">
+        <label>Role</label>
+        <select asp-for="Role" class="form-control" id="roleSelect">
+            <option value="Participant">Participant</option>
+            <option value="Organiser">Organiser</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Password</label>
+        <input asp-for="Password" type="password" class="form-control" />
+    </div>
+
+    <div id="participantFields">
+        <div class="mb-3">
+            <label>Full Name</label>
+            <input asp-for="FullName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>ID Number</label>
+            <input asp-for="IDNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" />
+        </div>
+    </div>
+
+    <div id="organiserFields" style="display:none;">
+        <div class="mb-3">
+            <label>Organisation Name</label>
+            <input asp-for="OrganisationName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Registration Number</label>
+            <input asp-for="RegistrationNumber" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label>Contact Person</label>
+            <input asp-for="ContactPerson" class="form-control" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Register</button>
+</form>
+
+<script>
+    document.getElementById('roleSelect').addEventListener('change', function () {
+        var role = this.value;
+        document.getElementById('participantFields').style.display = (role === 'Participant') ? 'block' : 'none';
+        document.getElementById('organiserFields').style.display = (role === 'Organiser') ? 'block' : 'none';
+    });
+</script>
+
